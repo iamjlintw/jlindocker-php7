@@ -59,6 +59,6 @@ MAINTAINER Jlintw <iamjlintw@gmail.com>
     RUN rm -rf /var/cache/apk/* && \
      rm -rf /tmp/*
 
-   t add README.mdEXPOSE 9000
+   EXPOSE 9000
    CMD ["/usr/sbin/php-fpm7"]
 

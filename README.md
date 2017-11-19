@@ -5,6 +5,6 @@ base on alpinelinux
 
 /etc/php7/php.ini
 
-/etc/php7/conf.d
+/etc/php7/conf.d/
 
 /etc/php7/php-fpm.conf

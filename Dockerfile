@@ -58,7 +58,7 @@ MAINTAINER Jlintw <iamjlintw@gmail.com>
     ##  
     RUN rm -rf /var/cache/apk/* && \
      rm -rf /tmp/*
-
+    RUN usermod -u 1000 www-data
    EXPOSE 9000
    CMD ["/usr/sbin/php-fpm7"]
 

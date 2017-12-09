@@ -48,7 +48,10 @@ MAINTAINER Jlintw <iamjlintw@gmail.com>
     RUN curl -sS https://getcomposer.org/installer | php7 -- --install-dir=/usr/bin --filename=composer
     RUN chmod +rx /usr/bin/composer
 
-    ##
+    #add user and group
+    RUN set -x \
+    && addgroup -g 82 -S www-data \
+    && adduser -u 82 -D -S -G www-data www-data
     # Link php bin  
     ##  
     #ENTRYPOINT /usr/sbin/php7-fpm --nodaemonize
@@ -58,7 +61,7 @@ MAINTAINER Jlintw <iamjlintw@gmail.com>
     ##  
     RUN rm -rf /var/cache/apk/* && \
      rm -rf /tmp/*
-    RUN usermod -u 1000 www-data
+   
    EXPOSE 9000
    CMD ["/usr/sbin/php-fpm7"]
 
